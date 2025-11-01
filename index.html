@@ -1,106 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Krishna Bharathi | Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Koduru Krishna Bharathi — UI/UX Designer Portfolio</title>
   <style>
-    body {font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333;}
-    header {background: #1F618D; color: white; padding: 20px 0; text-align: center;}
-    header h1 {margin: 0; font-size: 28px;}
-    header p {margin: 5px 0;}
-    nav {background: #2E4053; color: white; padding: 10px; text-align: center;}
-    nav a {color: white; margin: 0 15px; text-decoration: none;}
-    section {padding: 40px 20px; max-width: 900px; margin: auto;}
-    h2 {color: #1F618D; margin-bottom: 10px;}
-    .projects {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
-    .card {background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);}
-    .skills, .certificates {list-style: none; padding: 0;}
-    .skills li, .certificates li {background: #f1f1f1; margin: 5px 0; padding: 8px; border-radius: 5px;}
-    footer {background: #2E4053; color: white; text-align: center; padding: 20px; margin-top: 40px;}
-    .btn {display: inline-block; background: #1F618D; color: white; padding: 10px 20px; margin: 10px 5px; border-radius: 5px; text-decoration: none;}
-    .btn:hover {background: #154360;}
+    :root {
+      --accent: #3b82f6; /* bright blue */
+      --accent-dark: #1e3a8a; /* dark navy blue */
+      --bg-gradient: linear-gradient(180deg, #0a0f2c 0%, #102a54 50%, #0a0f2c 100%);
+      --text: #f1f5f9;
+      --muted: #cbd5e1;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background: var(--bg-gradient);
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(10,15,44,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      z-index: 1000;
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 18px 24px; }
+    nav a.logo { font-weight: 700; font-size: 20px; color: var(--accent); text-decoration: none; }
+    nav ul { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
+    nav ul li a { text-decoration: none; color: var(--text); font-weight: 500; transition: color 0.2s; }
+    nav ul li a:hover { color: var(--accent); }
+
+    section { max-width: 1000px; margin: 0 auto; padding: 100px 24px; }
+    h1, h2 { margin-bottom: 10px; }
+    h2 { color: var(--accent); font-size: 26px; }
+
+    .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 140px; }
+    .hero h1 { font-size: 34px; margin: 0; color: #ffffff; }
+    .hero h3 { color: var(--accent); margin: 8px 0 18px; }
+    .hero p { color: var(--muted); max-width: 600px; }
+
+    .about, .projects, .skills, .contact {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      margin-top: 40px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .project-list { display: grid; gap: 20px; }
+    .project { background: rgba(255,255,255,0.04); border-radius: var(--radius); padding: 20px; transition: transform 0.2s, box-shadow 0.2s; }
+    .project:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(59,130,246,0.3); }
+    .project h3 { margin: 0; color: var(--accent); }
+    .project p { color: var(--muted); }
+
+    .skills-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill { background: var(--accent-dark); color: #e0f2fe; padding: 6px 12px; border-radius: 999px; font-size: 13px; transition: background 0.3s; }
+    .pill:hover { background: var(--accent); }
+
+    footer { text-align: center; color: var(--muted); padding: 40px; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.1); }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      section { padding: 80px 18px; }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Koduru Krishna Bharathi</h1>
-    <p>UI/UX Designer | Web Developer</p>
-    <p>📧 bharathikoduru2526@gmail.com | 📱 9177180599</p>
-    <p><a href="#" class="btn">View Resume</a> <a href="Krishna_Bharathi_Resume.pdf" class="btn" download>Download Resume</a></p>
+    <nav>
+      <a href="#home" class="logo">Krishna Bharathi</a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <section id="home" class="hero">
+    <h1>Hi, I'm Koduru Krishna Bharathi</h1>
+    <h3>UI/UX Designer & CSE (AI–ML) Student</h3>
+    <p>Aspiring UI/UX Designer passionate about crafting clean, user-friendly digital experiences. Focused on turning ideas into visually appealing and intuitive interfaces.</p>
+  </section>
 
-  <section id="about">
+  <section id="about" class="about">
     <h2>About Me</h2>
-    <p>Aspiring UI/UX Designer with a foundation in AI–ML and front-end development. Skilled in Figma, Adobe XD, and prototyping, with hands-on project experience. Seeking opportunities to design intuitive, user-friendly digital experiences.</p>
+    <p>I'm a Computer Science (AI–ML) student from Lendi Institute of Engineering and Technology, Vizianagaram. With a passion for design and technology, I create meaningful user experiences through wireframes, prototypes, and visual storytelling. I enjoy designing apps that are not only functional but delightful to use.</p>
   </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <p><b>B.Tech – CSE (AI–ML)</b> | Lendi Institute of Engineering & Technology</p>
-    <p>Aug 2023 – May 2027 | Vizianagaram, Andhra Pradesh</p>
-    <ul>
-      <li>Coursework: Data Structures, Machine Learning, Deep Learning, Database Systems</li>
-      <li>Active in hackathons & workshops</li>
-    </ul>
-  </section>
-
-  <section id="projects">
+  <section id="projects" class="projects">
     <h2>Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>Heartune – Music Beyond Words!</h3>
-        <p>Designed a music app interface with personalized playlists. Focused on minimal design for easy navigation.</p>
+    <div class="project-list">
+      <div class="project">
+        <h3>Heartune — Music Beyond Words</h3>
+        <p>Music app prototype designed in Figma, focused on curating songs based on user preferences with simple navigation and clean layouts.</p>
       </div>
-      <div class="card">
-        <h3>Secure Stream – Safe OTT App for Kids</h3>
-        <p>Created OTT platform UI with parental controls & biometric login. Ensured safe, child-friendly design flow.</p>
+      <div class="project">
+        <h3>Secure Stream — Safe OTT App for Kids</h3>
+        <p>OTT prototype ensuring kid-safe viewing by integrating parental controls and biometric-based content access.</p>
       </div>
-      <div class="card">
-        <h3>Juicy Mockup – Animated Drink Showcase</h3>
-        <p>Built interactive mockup with motion-based transitions. Enhanced product visualization through creative UI animations.</p>
+      <div class="project">
+        <h3>Juicy Mockup — Where Taste Meets</h3>
+        <p>Animated product mockup design showcasing beverages with playful visuals and hierarchy.</p>
+      </div>
+      <div class="project">
+        <h3>Food Delivery App UI</h3>
+        <p>Responsive food delivery UI design emphasizing smooth ordering flow and modern visuals.</p>
       </div>
     </div>
   </section>
 
-  <section id="skills">
+  <section id="skills" class="skills">
     <h2>Skills</h2>
-    <ul class="skills">
-      <li><b>Design Tools:</b> Figma, Adobe XD, Canva</li>
-      <li><b>Development:</b> HTML, CSS, JavaScript, Python (basics)</li>
-      <li><b>UI/UX:</b> Wireframing, Prototyping, User Research, Usability Testing</li>
-      <li><b>Soft Skills:</b> Creativity, Problem-Solving, Team Collaboration, Time Management</li>
-    </ul>
+    <div class="skills-list">
+      <span class="pill">Figma</span>
+      <span class="pill">Adobe XD</span>
+      <span class="pill">Canva</span>
+      <span class="pill">Wireframing</span>
+      <span class="pill">Prototyping</span>
+      <span class="pill">User Flows</span>
+      <span class="pill">HTML</span>
+      <span class="pill">CSS</span>
+      <span class="pill">JavaScript</span>
+      <span class="pill">Python</span>
+      <span class="pill">Machine Learning</span>
+    </div>
   </section>
 
-  <section id="certificates">
-    <h2>Certificates</h2>
-    <ul class="certificates">
-      <li>Google AI–ML Virtual Internship</li>
-      <li>Google Android Developer Virtual Internship</li>
-      <li>AWS Data Engineering Virtual Internship</li>
-      <li>Google Cloud Generative AI Virtual Internship</li>
-    </ul>
-  </section>
-
-  <section id="contact">
+  <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>If you'd like to get in touch, feel free to reach me at:</p>
-    <p>📧 <a href="mailto:bharathikoduru2526@gmail.com">bharathikoduru2526@gmail.com</a></p>
-    <p>📱 9177180599</p>
+    <p>Email: <a href="mailto:bharathikoduru2526@gmail.com" style="color:var(--accent)">bharathikoduru2526@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919177180599" style="color:var(--accent)">+91 9177180599</a></p>
+    <p>Location: Vizianagaram, Andhra Pradesh</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Koduru Krishna Bharathi. All Rights Reserved.</p>
+    <p>© 2025 Koduru Krishna Bharathi. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
